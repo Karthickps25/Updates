@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Company Dashboard</title>
+  <title>GuhaTek</title>
+  <link rel="icon" type="image/png" href="../assets/images/updates/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -114,19 +115,28 @@
   </style>
 </head>
 <body class="antialiased">
-  <header class="gradient-header text-white py-1 px-1 text-center">
-  <div class="max-w-6xl mx-auto flex flex-col items-center">
-    <!-- Logo added here -->
-    <img src="../assets/images/updates/logo.jpg" alt="GuhaTek Logo" class="h-20 mb-4">
-    <h3 class="text-3xl font-bold mb-2">Welcome to GuhaTek</h3>
-    <p class="text-xl opacity-90">Our company updates, resources, and collaboration</p>
+  <header class="gradient-header text-white py-1 px-1">
+  <div class="max-w-6xl mx-auto flex items-center">
+    <!-- Logo on the left -->
+    <img src="../assets/images/updates/logo.jpg" alt="GuhaTek Logo" class="h-20">
+    
+    <!-- Spacer to push text to center -->
+    <div class="flex-grow text-center">
+      <h3 class="text-3xl font-bold mb-1">Welcome to GuhaTek</h3>
+      <p class="text-xl opacity-90">Our company updates, resources, and collaboration</p>
+    </div>
+
+    <!-- Empty div same width as logo to keep center alignment -->
+    <div class="h-20 w-[80px]"></div>
   </div>
+</header>
+
 </header>
 
   <div class="ticker-container py-3 px-4 shadow-sm">
     <div class="max-w-6xl mx-auto overflow-hidden">
       <div class="ticker text-sm font-semibold">
-        <span class="inline-flex items-center mr-8"><i class="fas fa-bullhorn text-yellow-600 mr-2"></i> Product Lanuch :Launching our new portal for internal HRMS</span>
+        <span class="inline-flex items-center mr-8"><i class="fas fa-bullhorn text-yellow-600 mr-2"></i> Product Lanuch: Launching our new portal- elevate.guhatek.org </span>
       </div>
     </div>
   </div>
@@ -379,7 +389,7 @@
       </div>
       <i class="fas fa-chevron-right text-slate-400 ml-auto"></i>
     </a>
-    <a href="https://drive.google.com/drive/folders/1A-1lV9ZCtxIcM3vP61aUDI0eGr10FHlC?usp=drive_link" target="_blank" class="flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors">
+    <a href="https://drive.google.com/drive/folders/1tSE4Y4jnG4xxOoMyG8qz78zU6Q1cr-7n?usp=drive_link" target="_blank" class="flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors">
       <div class="bg-purple-100 p-2 rounded-lg mr-3">
         <i class="fas fa-folder text-purple-500"></i>
       </div>
@@ -418,7 +428,7 @@
             <label for="anonymous" class="ml-2 block text-sm text-slate-700">Submit anonymously</label>
           </div>
         
-            <button onclick="window.open('https://forms.gle/your-google-form-link', '_blank')" class="w-full bg-teal-600 hover:bg-teal-700 text-white py-2 rounded-lg font-medium transition-colors">
+            <button onclick="window.open('', '_blank')" class="w-full bg-teal-600 hover:bg-teal-700 text-white py-2 rounded-lg font-medium transition-colors">
   Submit Suggestion
 </button>
 
@@ -433,7 +443,7 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <h3 class="font-bold text-lg mb-4">GuhaTek</h3>
-          <p class="text-sm text-slate-300">Innovating for a better tomorrow since 2010.</p>
+          <p class="text-sm text-slate-300">Innovating for a better tomorrow.</p>
         </div>
         <div>
           <h4 class="font-bold mb-4">Resources</h4>
