@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: #f8fafc;
+      color: #7f8897;
+      min-height: 100vh;
+    }
+    
+    .gradient-header {
+      background: linear-gradient(135deg, #c4c9e7 0%, #5b6abf 100%);
+    }
+    
+    .ticker-container {
+      background: linear-gradient(90deg, #ffedcc 0%, #fff4dd 100%);
+      overflow: hidden;
+    }
+    
+    .ticker {
+      display: inline-block;
+      white-space: nowrap;
+      animation: slide 25s linear infinite;
+    }
+    
+    @keyframes slide {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    
+    .card {
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 300px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .carousel-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(transparent, rgba(0,0,0,0.5));
+    }
+    
+    .carousel-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      color: white;
+      z-index: 2;
+    }
+    
+    .progress-bar {
+      height: 6px;
+      border-radius: 3px;
+      background: #e2e8f0;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #3b4a8a 0%, #5b6abf 100%);
+      border-radius: 3px;
+    }
+    
+    .animate-pulse {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <header class="gradient-header text-white py-1 px-1 text-center">
+  <div class="max-w-6xl mx-auto flex flex-col items-center">
+    <!-- Logo added here -->
+    <img src="../assets/images/updates/logo.jpg" alt="GuhaTek Logo" class="h-20 mb-4">
+    <h3 class="text-3xl font-bold mb-2">Welcome to GuhaTek</h3>
+    <p class="text-xl opacity-90">Our company updates, resources, and collaboration</p>
+  </div>
+</header>
+
+  <div class="ticker-container py-3 px-4 shadow-sm">
+    <div class="max-w-6xl mx-auto overflow-hidden">
+      <div class="ticker text-sm font-semibold">
+        <span class="inline-flex items-center mr-8"><i class="fas fa-bullhorn text-yellow-600 mr-2"></i> Product Lanuch :Launching our new portal for internal HRMS</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 py-6">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl font-bold text-slate-800">Featured Updates</h2>
+      <button class="text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center">
+        View All <i class="fas fa-chevron-right ml-1 text-xs"></i>
+      </button>
+    </div>
+    <div class="flex overflow-x-auto pb-4 -mx-2 scrollbar-hide">
+      <div class="carousel-item mx-2">
+        <img src="../assets/images/updates/launch.png" alt="Team building" class="w-full h-48 object-cover">
+        <div class="carousel-caption">
+          <h3 class="font-bold">Product Launch</h3>
+          <p class="text-xs">See our newest innovation</p>
+        </div>
+      </div>
+      <div class="carousel-item mx-2">
+        <img src="../assets/images/updates/Q2-1.png" alt="Product launch" class="w-full h-48 object-cover">
+        <div class="carousel-caption">
+          <h3 class="font-bold">GuhaTek Q2 Meetup</h3>
+          <p class="text-xs">Unity makes us unstoppable</p>
+        </div>
+      </div>
+      <div class="carousel-item mx-2">
+        <img src="../assets/images/updates/meetup.jpg">
+        <div class="carousel-caption">
+          <h3 class="font-bold">Grafana & Friends X SRE</h3>
+          <p class="text-xs">Grafana and Friends Coimbatore Community Event happening this May 2025! 🚀</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 py-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Announcements Card -->
+      <div class="card bg-white p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-bold text-slate-800 flex items-center">
+            <i class="fas fa-bullhorn text-blue-500 mr-3"></i> Announcements
+          </h2>
+          <span class="badge bg-blue-100 text-blue-800">2 New</span>
+        </div>
+        <div class="space-y-4">
+          <div class="border-b border-gray-100 pb-3">
+            <div class="flex items-start">
+              <div class="bg-blue-100 p-2 rounded-lg mr-3">
+                <i class="fas fa-server text-blue-500"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-slate-800">Launching our New website</h3>
+                <p class="text-sm text-slate-600">May 23th, 10:30AM</p>
+                <p class="text-xs text-slate-500 mt-1">Posted 2 hours ago</p>
+              </div>
+            </div>
+          </div>
+          <div class="border-b border-gray-100 pb-3">
+            <div class="flex items-start">
+              <div class="bg-green-100 p-2 rounded-lg mr-3">
+                <i class="fas fa-lightbulb text-green-500"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-slate-800">Wrapping up a successful first quarter at GuhaTek</h3>
+                <p class="text-xs text-slate-500 mt-1">Posted 1 day ago</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <button class="mt-4 text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center">
+          View All Announcements <i class="fas fa-chevron-right ml-1 text-xs"></i>
+        </button>
+      </div>
+
+      <!-- Upcoming Events Card -->
+      <div class="card bg-white p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-bold text-slate-800 flex items-center">
+            <i class="fas fa-calendar-alt text-red-500 mr-3"></i> Upcoming Events
+          </h2>
+        </div>
+        <div class="space-y-4">
+          <div class="border-b border-gray-100 pb-3">
+            <div class="flex items-start">
+              <div class="bg-red-100 p-2 rounded-lg mr-3 text-center" style="min-width: 40px;">
+                <div class="font-bold text-red-600">23</div>
+                <div class="text-xs text-red-500">MAY</div>
+              </div>
+              <div>
+                <h3 class="font-semibold text-slate-800">Q2 GuhaTek Meetup</h3>
+                <p class="text-sm text-slate-600">10:00 AM - 12:00 PM • KCT Tech Park</p>
+                <div class="flex items-center mt-1">
+                  <span class="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full">Mandatory</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-b border-gray-100 pb-3">
+            <div class="flex items-start">
+              <div class="bg-orange-100 p-2 rounded-lg mr-3 text-center" style="min-width: 40px;">
+                <div class="font-bold text-orange-600">24</div>
+                <div class="text-xs text-orange-500">MAY</div>
+              </div>
+              <div>
+                <h3 class="font-semibold text-slate-800">Grafana & Friends X SRE</h3>
+                <p class="text-sm text-slate-600">9:30 AM - 1:00 PM • Coimbatore</p>
+                <div class="flex items-center mt-1">
+                  <span class="text-xs bg-green-50 text-green-600 px-2 py-0.5 rounded-full">Meetup</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="mt-4 text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center">
+          View Calendar <i class="fas fa-chevron-right ml-1 text-xs"></i>
+        </button>
+      </div>
+
+      <!-- Quick Links Card -->
+      <div class="card bg-white p-6">
+        <h2 class="text-xl font-bold text-slate-800 flex items-center mb-4">
+          <i class="fas fa-rocket text-green-500 mr-3"></i> Quick Links
+        </h2>
+        <div class="grid grid-cols-2 gap-3">
+          <a href="#" class="p-3 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors flex flex-col items-center text-center">
+            <i class="fas fa-file-invoice-dollar text-blue-500 text-xl mb-2"></i>
+            <span class="text-sm font-medium text-slate-800">Annual Reports</span>
+          </a>
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <a href="https://www.guhatek.com/" target="_blank"
+     class="p-4 w-40 rounded-lg bg-purple-50 hover:bg-purple-100 transition-colors duration-300 flex flex-col items-center text-center shadow-md">
+    
+    <i class="fas fa-book text-purple-500 text-2xl mb-2"></i>
+    <span class="text-sm font-medium text-slate-800">HR Policies</span>
+  
+  </a>   
+          <a href="http://elevate.guhatek.org/login/?next=/" target="_blank"
+     class="p-4 w-40 rounded-lg bg-purple-50 hover:bg-purple-100 transition-colors duration-300 flex flex-col items-center text-center shadow-md">
+    
+    <i class="fas fa-rocket text-purple-500 text-2xl mb-2"></i>
+    <span class="text-sm font-medium text-slate-800">Elevate</span>
+          <a href="#" class="p-3 rounded-lg bg-red-50 hover:bg-red-100 transition-colors flex flex-col items-center text-center">
+            <i class="fas fa-headset text-red-500 text-xl mb-2"></i>
+            <span class="text-sm font-medium text-slate-800">IT Helpdesk</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Team Spotlight Card -->
+      <div class="card bg-white p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-bold text-slate-800 flex items-center">
+            <i class="fas fa-star text-yellow-500 mr-3"></i> Team Spotlight
+          </h2>
+          <button class="text-xs font-medium bg-yellow-50 text-yellow-600 px-2 py-1 rounded-full">
+            Nominate
+          </button>
+        </div>
+        <div class="text-center mb-4">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Employee of the month" class="avatar mx-auto mb-3 border-4 border-yellow-200">
+          <h3 class="font-bold text-lg text-slate-800">Ananya R.</h3>
+          <p class="text-sm text-slate-600 mb-2">SRE • 2 years with GuhaTek</p>
+          <div class="flex justify-center space-x-1 mb-3">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+          <p class="text-sm text-slate-700">"Identified 95+ critical bugs in Q1, preventing potential customer issues and saving estimated $250K in support costs."</p>
+        </div>
+      </div>
+
+      <!-- Training Video Card -->
+<div class="card bg-white p-6 shadow-md rounded-xl">
+  <h2 class="text-xl font-bold text-slate-800 flex items-center mb-4">
+    <i class="fas fa-video text-red-500 mr-3"></i> Featured Training
+  </h2>
+  <div class="relative pb-[56.25%] rounded-lg overflow-hidden bg-gray-100 mb-3">
+    <a href="https://youtu.be/A5_75UKN0LY" target="_blank" class="absolute inset-0 flex items-center justify-center z-10">
+      <button class="bg-red-500 text-white rounded-full p-4 hover:bg-red-600 transition-colors shadow-lg">
+        <i class="fas fa-play text-xl"></i>
+      </button>
+    </a>
+    <img src="https://img.youtube.com/vi/A5_75UKN0LY/hqdefault.jpg" alt="Training Video Thumbnail" class="absolute inset-0 w-full h-full object-cover">
+  </div>
+  <h3 class="font-bold text-slate-800 mb-1">LitmusChaosCon - 2024</h3>
+  <p class="text-sm text-slate-600 mb-3">Are you hesitant to run chaos experiments in production?.</p>
+  <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2 overflow-hidden">
+    <div class="bg-green-500 h-2.5" style="width: 84%"></div>
+  </div>
+  <a href="https://youtu.be/A5_75UKN0LY" target="_blank">
+    <button class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-medium transition-colors">
+      Start Watching
+    </button>
+  </a>
+</div>
+
+
+
+      <!-- Birthdays Card -->
+      <div class="card bg-white p-6">
+        <h2 class="text-xl font-bold text-slate-800 flex items-center mb-4">
+          <i class="fas fa-birthday-cake text-pink-500 mr-3"></i> This Week's Birthdays
+        </h2>
+        <div class="space-y-3">
+          <div class="flex items-center p-2 hover:bg-pink-50 rounded-lg transition-colors">
+            <img src="../assets/images/updates/siva.jpg" alt="Aman" class="avatar mr-3">
+            <div>
+              <h3 class="font-medium text-slate-800">Sivasubramanian Bagavathiappan</h3>
+              <p class="text-sm text-slate-600">SRE Leader • May 22</p>
+            </div>
+            <button class="ml-auto text-pink-500 hover:text-pink-700">
+              <i class="far fa-gift"></i>
+            </button>
+          </div>
+          
+        </div>
+        <button class="mt-4 text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center">
+          View Full Birthday Calendar <i class="fas fa-chevron-right ml-1 text-xs"></i>
+        </button>
+      </div>
+
+      <!-- Quote Card -->
+      <div class="card bg-gradient-to-br from-blue-50 to-indigo-50 p-6">
+        <h2 class="text-xl font-bold text-slate-800 flex items-center mb-4">
+          <i class="fas fa-quote-left text-indigo-500 mr-3"></i> Inspiration Corner
+        </h2>
+        <div class="text-center">
+          <p class="text-lg italic text-slate-700 mb-4">
+            "Success is not final, failure is not fatal: It is the courage to continue that counts."
+          </p>
+          <p class="font-medium text-slate-800">— Winston Churchill</p>
+          <div class="mt-6 flex justify-center space-x-4">
+            <button class="text-indigo-600 hover:text-indigo-800">
+              <i class="fab fa-twitter"></i>
+            </button>
+            <button class="text-indigo-600 hover:text-indigo-800">
+              <i class="fab fa-linkedin"></i>
+            </button>
+            <button class="text-indigo-600 hover:text-indigo-800">
+              <i class="fas fa-envelope"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shared Drives Card -->
+<div class="card bg-white p-6">
+  <h2 class="text-xl font-bold text-slate-800 flex items-center mb-4">
+    <i class="fas fa-folder-open text-orange-500 mr-3"></i> Shared Drives
+  </h2>
+  <div class="space-y-3">
+    <a href="https://drive.google.com/drive/folders/1fWzGWXIPs2W-JA8nZiYFyB84xxJ6e2IN?usp=drive_link" target="_blank" class="flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors">
+      <div class="bg-blue-100 p-2 rounded-lg mr-3">
+        <i class="fas fa-folder text-blue-500"></i>
+      </div>
+      <div>
+        <h3 class="font-medium text-slate-800">Project Documentation</h3>
+        <p class="text-xs text-slate-500">Updated 3 hours ago </p>
+      </div>
+      <i class="fas fa-chevron-right text-slate-400 ml-auto"></i>
+    </a>
+    <a href="https://drive.google.com/drive/folders/1A-1lV9ZCtxIcM3vP61aUDI0eGr10FHlC?usp=drive_link" target="_blank" class="flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors">
+      <div class="bg-green-100 p-2 rounded-lg mr-3">
+        <i class="fas fa-folder text-green-500"></i>
+      </div>
+      <div>
+        <h3 class="font-medium text-slate-800"> SRE Training Materials</h3>
+        <p class="text-xs text-slate-500">Updated yesterday</p>
+      </div>
+      <i class="fas fa-chevron-right text-slate-400 ml-auto"></i>
+    </a>
+    <a href="https://drive.google.com/drive/folders/1A-1lV9ZCtxIcM3vP61aUDI0eGr10FHlC?usp=drive_link" target="_blank" class="flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors">
+      <div class="bg-purple-100 p-2 rounded-lg mr-3">
+        <i class="fas fa-folder text-purple-500"></i>
+      </div>
+      <div>
+        <h3 class="font-medium text-slate-800">Tasks</h3>
+        <p class="text-xs text-slate-500">Updated 2 days ago </p>
+      </div>
+      <i class="fas fa-chevron-right text-slate-400 ml-auto"></i>
+    </a>
+  </div>
+  <a href="https://drive.google.com/drive/folders/1oFnTpZa5cDobPReHzTIMxtqHR-ZncmQz?usp=drive_link" target="_blank">
+    <button class="mt-4 text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center">
+      View All Shared Drives <i class="fas fa-chevron-right ml-1 text-xs"></i>
+    </button>
+  </a>
+</div>
+
+
+      <!-- Suggestion Box Card -->
+      <div class="card bg-white p-6">
+        <h2 class="text-xl font-bold text-slate-800 flex items-center mb-4">
+          <i class="fas fa-comment-dots text-teal-500 mr-3"></i> Suggestion Box
+        </h2>
+        <p class="text-sm text-slate-600 mb-4">Your ideas help us improve! Share suggestions anonymously or with your name.</p>
+        <form>
+          <div class="mb-3">
+            <label class="block text-sm font-medium text-slate-700 mb-1">Subject</label>
+            <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div class="mb-3">
+            <label class="block text-sm font-medium text-slate-700 mb-1">Your Suggestion</label>
+            <textarea rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+          </div>
+          <div class="flex items-center mb-4">
+            <input type="checkbox" id="anonymous" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+            <label for="anonymous" class="ml-2 block text-sm text-slate-700">Submit anonymously</label>
+          </div>
+        
+            <button onclick="window.open('https://forms.gle/your-google-form-link', '_blank')" class="w-full bg-teal-600 hover:bg-teal-700 text-white py-2 rounded-lg font-medium transition-colors">
+  Submit Suggestion
+</button>
+
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-slate-800 text-white py-8 px-4 mt-12">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="font-bold text-lg mb-4">GuhaTek</h3>
+          <p class="text-sm text-slate-300">Innovating for a better tomorrow since 2010.</p>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Resources</h4>
+          <ul class="space-y-2 text-sm text-slate-300">
+            <li><a href="#" class="hover:text-white">Employee Handbook</a></li>
+            <li><a href="#" class="hover:text-white">Training Portal</a></li>
+            <li><a href="#" class="hover:text-white">IT Support</a></li>
+            <li><a href="#" class="hover:text-white">Benefits</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Connect</h4>
+          <ul class="space-y-2 text-sm text-slate-300">
+            <li><a href="#" class="hover:text-white">Company Directory</a></li>
+            <li><a href="#" class="hover:text-white">Teams</a></li>
+            <li><a href="#" class="hover:text-white">Mentorship Program</a></li>
+            <li><a href="#" class="hover:text-white">Employee Resource Groups</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm text-slate-300">
+            <li class="flex items-center"><i class="fas fa-envelope mr-2"></i> hello@guhatek.com</li>
+            <li class="flex items-center"><i class="fas fa-phone mr-2"></i> +91 7373034304</li>
+            <li class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i> KCT Tech Park, Coimbatore</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-slate-700 mt-8 pt-6 text-sm text-slate-400 text-center">
+        <p>© 2025 GuhaTek. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple animation for cards when they come into view
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.card');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(card);
+      });
+      
+      // Simple carousel navigation (would be enhanced in a real implementation)
+      const carouselItems = document.querySelectorAll('.carousel-item');
+      carouselItems.forEach(item => {
+        item.addEventListener('click', function() {
+          // In a real app, this would open a modal or navigate to a detail page
+          alert('Opening: ' + this.querySelector('h3').textContent);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
