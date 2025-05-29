@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GuhaTek</title>
   <link rel="icon" type="image/png" href="../assets/images/updates/favicon.png">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
+    
+    body {  
       font-family: 'Nunito', sans-serif;
       background: #f8fafc;
       color: #7f8897;
@@ -30,9 +34,9 @@
       white-space: nowrap;
       animation: slide 25s linear infinite;
     }
-    
+      
     @keyframes slide {
-      0% { transform: translateX(100%); }
+      10000% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
     
@@ -49,7 +53,7 @@
     
     .carousel-item {
       flex: 0 0 auto;
-      width: 300px;
+      width: 100px;
       border-radius: 12px;
       overflow: hidden;
       position: relative;
@@ -136,43 +140,212 @@
   <div class="ticker-container py-3 px-4 shadow-sm">
     <div class="max-w-6xl mx-auto overflow-hidden">
       <div class="ticker text-sm font-semibold">
-        <span class="inline-flex items-center mr-8"><i class="fas fa-bullhorn text-yellow-600 mr-2"></i> Product Lanuch: Launching our new portal- elevate.guhatek.org </span>
+        <span class="inline-flex items-center mr-8"><i class="fas fa-bullhorn text-yellow-600 mr-2"></i> Product Lanuched: Launched our new portal- elevate.guhatek.org </span>
       </div>
     </div>
   </div>
 
-  <div class="max-w-6xl mx-auto px-4 py-6">
-    <div class="flex items-center justify-between mb-6">
-      <h2 class="text-2xl font-bold text-slate-800">Featured Updates</h2>
-      <button class="text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center">
-        View All <i class="fas fa-chevron-right ml-1 text-xs"></i>
-      </button>
-    </div>
-    <div class="flex overflow-x-auto pb-4 -mx-2 scrollbar-hide">
-      <div class="carousel-item mx-2">
-        <img src="../assets/images/updates/launch.png" alt="Team building" class="w-full h-48 object-cover">
-        <div class="carousel-caption">
-          <h3 class="font-bold">Product Launch</h3>
-          <p class="text-xs">See our newest innovation</p>
-        </div>
-      </div>
-      <div class="carousel-item mx-2">
-        <img src="../assets/images/updates/Q2-1.png" alt="Product launch" class="w-full h-48 object-cover">
-        <div class="carousel-caption">
-          <h3 class="font-bold">GuhaTek Q2 Meetup</h3>
-          <p class="text-xs">Unity makes us unstoppable</p>
-        </div>
-      </div>
-      <div class="carousel-item mx-2">
-        <img src="../assets/images/updates/meetup.jpg">
-        <div class="carousel-caption">
-          <h3 class="font-bold">Grafana & Friends X SRE</h3>
-          <p class="text-xs">Grafana and Friends Coimbatore Community Event happening this May 2025! 🚀</p>
+<!-- Swiper CSS (in <head>) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<div class="max-w-6xl mx-auto px-4 py-6">
+  <div class="flex items-center justify-between mb-6">
+    <h2 class="text-2xl font-bold text-slate-800">Featured Updates</h2>
+    <button class="text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center">
+      View All <i class="fas fa-chevron-right ml-1 text-xs"></i>
+    </button>
+  </div>
+
+  <!-- Main Carousel -->
+  <div class="swiper mainSwiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide p-3">
+        <div class="rounded-lg overflow-hidden shadow-md bg-white flex flex-col items-center">
+          <img src="../assets/images/updates/launch.png" class="w-full h-48 object-cover rounded-t-lg" />
+          <div class="p-4 text-center">
+            <h3 class="text-lg font-semibold text-blue-600">Exciting Product Launch</h3>
+            <p class="text-sm text-gray-600">Discover our latest innovation in technology.</p>
+          </div>
         </div>
       </div>
 
+      <!-- Slide 2 - Nested Swiper -->
+      <div class="swiper-slide h-[500px] p-3">
+  <div class="bg-white shadow-md rounded-lg flex flex-col justify-between h-full p-4 text-center">
+    <div class="swiper nestedSwiper2 rounded-full w-48 h-48 overflow-hidden">
+      <div class="swiper-wrapper">
+
+              <!-- Kalai -->
+              <div class="swiper-slide text-center" data-name="Kalai" data-description="Spot Award(Principal Engineer-SRE)">
+                <img src="../assets/images/updates/Kalai.jpg" class="w-48 h-48 object-cover rounded-full" />
+              </div>
+
+              <!-- Chandru -->
+              <div class="swiper-slide text-center" data-name="Chandru" data-description=" Spot Award(Principal Engineer-SRE)">
+                <img src="../assets/images/updates/Chandru.jpg" class="w-48 h-48 object-cover rounded-full" />
+              </div>
+
+              <!-- Karthick -->
+              <div class="swiper-slide text-center" data-name="Karthick" data-description="Emerging Star Award(Intern SRE)">
+                <img src="../assets/images/updates/Karthick.jpg" class="w-48 h-48 object-cover rounded-full" />
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 text-center">
+            <h3 id="profile-name-1" class="text-lg font-semibold text-blue-600">Kalai</h3>
+            <p id="profile-description-1" class="text-sm text-gray-600">Expert in UI/UX design and creative solutions.</p>
+          </div>
+
+          <div class="p-2 text-center">
+            <h3 class="text-lg font-semibold text-blue-600">Award Winners</h3>
+            <p class="text-sm text-gray-600">Celebrating the talent and creativity of our winners.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide h-[500px] p-3">
+  <div class="bg-white shadow-md rounded-lg flex flex-col justify-between h-full p-4 text-center">
+    <div class="swiper nestedSwiper2 rounded-full w-48 h-48 overflow-hidden">
+      <div class="swiper-wrapper">
+        <!-- Kalaiselvan -->
+        <div class="swiper-slide text-center" data-name="Kalaiselvan" data-description="Product Development">
+          <img src="../assets/images/updates/Kalai.jpg" class="w-48 h-48 object-cover rounded-full" />
+        </div>
+
+        <!-- Chandrasekar -->
+        <div class="swiper-slide text-center" data-name="Chandrasekar Mayilvaganan" data-description="Platform Engineering & Tools">
+          <img src="../assets/images/updates/Chandru.jpg" class="w-48 h-48 object-cover rounded-full" />
+        </div>
+
+        <!-- Neha -->
+        <div class="swiper-slide text-center" data-name="Neha Malviya" data-description="DevSecOps">
+          <img src="../assets/images/updates/Neha.jpg" class="w-48 h-48 object-cover rounded-full" />
+        </div>
+
+        <!-- Malavika -->
+        <div class="swiper-slide text-center" data-name="Malavika Selavn" data-description="Enablement & Growth">
+          <img src="../assets/images/updates/Malavika.jpg" class="w-48 h-48 object-cover rounded-full" />
+        </div>
+
+        <!-- Vaibhav -->
+        <div class="swiper-slide text-center" data-name="Vaibhav Gramni" data-description="Observability">
+          <img src="../assets/images/updates/Vaibhav.jpg" class="w-48 h-48 object-cover rounded-full" />
+        </div>
+
+        <!-- Kamal -->
+        <div class="swiper-slide text-center" data-name="Kamal Chandar" data-description="Opensource">
+          <img src="../assets/images/updates/Kamal.jpg" class="w-48 h-48 object-cover rounded-full" />
+        </div>
+
+        <!-- Revanth -->
+        <div class="swiper-slide text-center" data-name="Revanth Kumar Gandipalli" data-description="Chaos Engineering">
+          <img src="../assets/images/updates/Revanth .jpg" class="w-48 h-48 object-cover rounded-full" />
+        </div>
+
+        <!-- Prakash -->
+        <div class="swiper-slide text-center" data-name="Prakash" data-description="Product Research">
+          <img src="../assets/images/updates/Prakash .jpg" class="w-48 h-48 object-cover rounded-full" />
+        </div>
+
+        <!-- Gokul -->
+        <div class="swiper-slide text-center" data-name="Gokul Raj" data-description="Branding & Marketing">
+          <img src="../assets/images/updates/Gokul.jpg" class="w-48 h-48 object-cover rounded-full" />
+        </div>
+
+        <!-- Imran -->
+        <div class="swiper-slide text-center" data-name="Mohammed Imran" data-description="Tech Talks">
+          <img src="../assets/images/updates/Imran.png.jpg" class="w-48 h-48 object-cover rounded-full" />
+        </div>
+      </div>
+    </div>
+
+    <div class="p-4 text-center">
+      <h3 id="profile-name-2" class="text-lg font-semibold text-blue-600">Kalaiselvan</h3>
+      <p id="profile-description-2" class="text-sm text-gray-600">Product Development</p>
+    </div>
+    <div class="p-2 text-center">
+      <h3 class="text-lg font-semibold text-blue-600">Meet the Leads</h3>
+      <p class="text-sm text-gray-600">Recognizing key contributors driving innovation and growth.</p>
     </div>
   </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Swiper JS (Place at end of body) -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Swiper Init Script -->
+<script>
+  // Main Carousel
+  const mainSwiper = new Swiper(".mainSwiper", {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    slidesPerView: 1,
+    spaceBetween: 16,
+    breakpoints: {
+      640: { slidesPerView: 1.5 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    }
+  });
+
+  // Nested Swipers
+  const nestedSwiper1 = new Swiper(".nestedSwiper1", {
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    slidesPerView: 1,
+    effect: "fade",
+    on: {
+      slideChange: function () {
+        updateProfileDetails(this, "1");
+      }
+    }
+  });
+
+  const nestedSwiper2 = new Swiper(".nestedSwiper2", {
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    slidesPerView: 1,
+    effect: "fade",
+    on: {
+      slideChange: function () {
+        updateProfileDetails(this, "2");
+      }
+    }
+  });
+
+  // Update profile details
+  function updateProfileDetails(swiper, suffix) {
+    const activeSlide = swiper.slides[swiper.activeIndex];
+    const name = activeSlide.getAttribute("data-name");
+    const description = activeSlide.getAttribute("data-description");
+
+    document.getElementById("profile-name-" + suffix).textContent = name;
+    document.getElementById("profile-description-" + suffix).textContent = description;
+  }
+
+  // Initial update on load
+  window.addEventListener("load", () => {
+    updateProfileDetails(nestedSwiper1, "1");
+    updateProfileDetails(nestedSwiper2, "2");
+  });
+</script>
+
 
   <div class="max-w-6xl mx-auto px-4 py-6">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -182,20 +355,11 @@
           <h2 class="text-xl font-bold text-slate-800 flex items-center">
             <i class="fas fa-bullhorn text-blue-500 mr-3"></i> Announcements
           </h2>
-          <span class="badge bg-blue-100 text-blue-800">2 New</span>
+          <span class="badge bg-blue-100 text-blue-800">1 New</span>
         </div>
         <div class="space-y-4">
           <div class="border-b border-gray-100 pb-3">
-            <div class="flex items-start">
-              <div class="bg-blue-100 p-2 rounded-lg mr-3">
-                <i class="fas fa-server text-blue-500"></i>
-              </div>
-              <div>
-                <h3 class="font-semibold text-slate-800">Launching our New website</h3>
-                <p class="text-sm text-slate-600">May 23th, 10:30AM</p>
-                <p class="text-xs text-slate-500 mt-1">Posted 2 hours ago</p>
-              </div>
-            </div>
+            
           </div>
           <div class="border-b border-gray-100 pb-3">
             <div class="flex items-start">
@@ -204,7 +368,7 @@
               </div>
               <div>
                 <h3 class="font-semibold text-slate-800">Wrapping up a successful first quarter at GuhaTek</h3>
-                <p class="text-xs text-slate-500 mt-1">Posted 1 day ago</p>
+                <p class="text-xs text-slate-500 mt-1">Posted 3 day ago</p>
               </div>
             </div>
           </div>
@@ -233,7 +397,7 @@
                 <h3 class="font-semibold text-slate-800">Q2 GuhaTek Meetup</h3>
                 <p class="text-sm text-slate-600">10:00 AM - 12:00 PM • KCT Tech Park</p>
                 <div class="flex items-center mt-1">
-                  <span class="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full">Mandatory</span>
+                  <span class="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full">Completed</span>
                 </div>
               </div>
             </div>
@@ -248,7 +412,7 @@
                 <h3 class="font-semibold text-slate-800">Grafana & Friends X SRE</h3>
                 <p class="text-sm text-slate-600">9:30 AM - 1:00 PM • Coimbatore</p>
                 <div class="flex items-center mt-1">
-                  <span class="text-xs bg-green-50 text-green-600 px-2 py-0.5 rounded-full">Meetup</span>
+                  <span class="text-xs bg-green-50 text-green-600 px-2 py-0.5 rounded-full">Completed</span>
                 </div>
               </div>
             </div>
@@ -302,6 +466,21 @@
             Nominate
           </button>
         </div>
+        <div class="text-center mb-4">
+          <img src="../assets/images/updates/Kalai.jpg" alt="Employee of the month" class="avatar mx-auto mb-3 border-4 border-yellow-200">
+          <h3 class="font-bold text-lg text-slate-800">Kalaiselvan S</h3>
+          <p class="text-sm text-slate-600 mb-2">Principal Engineer - SRE</p>
+      </div>
+      <div class="text-center mb-4">
+          <img src="../assets/images/updates/Chandru.jpg" alt="Employee of the month" class="avatar mx-auto mb-3 border-4 border-yellow-200">
+          <h3 class="font-bold text-lg text-slate-800">Chandrasekar Mayilvaganan</h3>
+          <p class="text-sm text-slate-600 mb-2">Principal Engineer - SRE</p>
+      </div>
+      <div class="text-center mb-4">
+          <img src="../assets/images/updates/Karthick.jpg" alt="Employee of the month" class="avatar mx-auto mb-3 border-4 border-yellow-200">
+          <h3 class="font-bold text-lg text-slate-800">Karthick Sathyamoorthy</h3>
+          <p class="text-sm text-slate-600 mb-2">Intern -SRE</p>
+      </div>
       </div>
 
       <!-- Training Video Card -->
@@ -331,13 +510,132 @@
 
 
 
-      <!-- Birthdays Card -->
-      <div class="card bg-white p-6">
-        <h2 class="text-xl font-bold text-slate-800 flex items-center mb-4">
-          <i class="fas fa-birthday-cake text-pink-500 mr-3"></i> This Week's Birthdays
-        </h2>
-      
+<div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md mx-auto">
+  <h2 class="text-xl font-bold text-slate-800 flex items-center mb-4">
+    <i class="fas fa-star text-blue-500 mr-3"></i> Tracks and Leads
+  </h2>
+
+  <!-- Team Members -->
+  <div class="space-y-4">
+    <!-- Kalaiselvan -->
+    <div class="flex items-start space-x-3">
+      <img src="../assets/images/updates/Kalai.jpg" alt="Kalaiselvan" class="w-12 h-12 rounded-full border-2 border-blue-300">
+      <div>
+        <p class="text-base font-semibold text-slate-800">Kalaiselvan</p>
+        <p class="text-sm font-semibold text-slate-600">Product Development</p>
+        <p class="text-sm text-slate-600">Develop AI Agents and tools helping day-to-day project delivery</p>
       </div>
+    </div>
+
+    <!-- Chandru -->
+    <div class="flex items-start space-x-3">
+      <img src="../assets/images/updates/Chandru.jpg" alt="Chandru" class="w-12 h-12 rounded-full border-2 border-blue-300">
+      <div>
+        <p class="text-base font-semibold text-slate-800">Chandrasekar Mayilvaganan</p>
+        <p class="text-sm font-semibold text-slate-600">Platform Engineering & Tools</p>
+        <p class="text-sm text-slate-600">Performance optimization & observability strategy</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toggle Button -->
+  <div class="pt-5">
+    <button id="toggleBtn" onclick="toggleDetails()" class="text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center">
+      View Full Details <span id="arrow" class="ml-1">▼</span>
+    </button>
+  </div>
+
+  <!-- Hidden Extra Details -->
+  <div id="extra-details" class="hidden mt-4 space-y-4">
+    <div class="flex items-start space-x-3">
+      <img src="../assets/images/updates/Neha.jpg" alt="Chandru" class="w-12 h-12 rounded-full border-2 border-blue-300">
+      <div>
+        <p class="text-base font-semibold text-slate-800">Neha Malviya</p>
+        <p class="text-sm font-semibold text-slate-600">DevSecOps</p>
+        <p class="text-sm text-slate-600">CI/CD Observability and Automated Risk & Operational Readiness Checks</p>
+      </div>
+    </div>
+    <div class="flex items-start space-x-3">
+      <img src="../assets/images/updates/Malavika.jpg" alt="Chandru" class="w-12 h-12 rounded-full border-2 border-blue-300">
+      <div>
+        <p class="text-base font-semibold text-slate-800">Malavika Selavn</p>
+        <p class="text-sm font-semibold text-slate-600">Enablement & Growth</p>
+        <p class="text-sm text-slate-600">Enablement planning & alignment</p>
+      </div>
+    </div>
+    <div class="flex items-start space-x-3">
+      <img src="../assets/images/updates/Vaibhav.jpg" alt="Chandru" class="w-12 h-12 rounded-full border-2 border-blue-300">
+      <div>
+        <p class="text-base font-semibold text-slate-800">Vaibhav Gramni</p>
+        <p class="text-sm font-semibold text-slate-600">Observability</p>
+        <p class="text-sm text-slate-600">Open Source observability</p>
+      </div>
+    </div>
+    <div class="flex items-start space-x-3">
+      <img src="../assets/images/updates/Kamal.jpg" alt="Chandru" class="w-12 h-12 rounded-full border-2 border-blue-300">
+      <div>
+        <p class="text-base font-semibold text-slate-800">Kamal Chandar</p>
+        <p class="text-sm font-semibold text-slate-600">Opensource</p>
+        <p class="text-sm text-slate-600">Contribution guidelines & credits</p>
+      </div>
+    </div>
+    <div class="flex items-start space-x-3">
+      <img src="../assets/images/updates/Revanth .jpg" alt="Chandru" class="w-12 h-12 rounded-full border-2 border-blue-300">
+      <div>
+        <p class="text-base font-semibold text-slate-800">Revanth Kumar Gandipalli</p>
+        <p class="text-sm font-semibold text-slate-600">Chaos Engineering</p>
+        <p class="text-sm text-slate-600">Litmus & Chaos Mesh Capability Development</p>
+      </div>
+    </div>
+    <div class="flex items-start space-x-3">
+      <img src="../assets/images/updates/Prakash .jpg" alt="Chandru" class="w-12 h-12 rounded-full border-2 border-blue-300">
+      <div>
+        <p class="text-base font-semibold text-slate-800">Prakash</p>
+        <p class="text-sm font-semibold text-slate-600">Product Research</p>
+        <p class="text-sm text-slate-600">Bring-in new open source products through market research</p>
+      </div>
+    </div>
+    <div class="flex items-start space-x-3">
+      <img src="../assets/images/updates/Gokul.jpg" alt="Chandru" class="w-12 h-12 rounded-full border-2 border-blue-300">
+      <div>
+        <p class="text-base font-semibold text-slate-800">Gokul Raj</p>
+        <p class="text-sm font-semibold text-slate-600">Branding & Marketing</p>
+        <p class="text-sm text-slate-600">Litmus & Chaos Mesh Capability Development</p>
+      </div>
+    </div>
+     <div class="flex items-start space-x-3">
+      <img src="../assets/images/updates/Imran.png.jpg" alt="Chandru" class="w-12 h-12 rounded-full border-2 border-blue-300">
+      <div>
+        <p class="text-base font-semibold text-slate-800">Mohammed Imran</p>
+        <p class="text-sm font-semibold text-slate-600">Tech Talks</p>
+        <p class="text-sm text-slate-600">Market research & trending topics</p>
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  function toggleDetails() {
+    const details = document.getElementById('extra-details');
+    const arrow = document.getElementById('arrow');
+    const button = document.getElementById('toggleBtn');
+
+    details.classList.toggle('hidden');
+
+    // Toggle arrow and text
+    if (details.classList.contains('hidden')) {
+      arrow.textContent = '▼';
+      button.firstChild.textContent = 'View Full Details ';
+    } else {
+      arrow.textContent = '▲';
+      button.firstChild.textContent = 'Hide Details ';
+    }
+  }
+</script>
+
 
       <!-- Quote Card -->
       <div class="card bg-gradient-to-br from-blue-50 to-indigo-50 p-6">
@@ -479,6 +777,16 @@
   </footer>
 
   <script>
+    function parseJwt (token) {
+      const base64Url = token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+      return JSON.parse(jsonPayload);
+    }
+
+    
     // Simple animation for cards when they come into view
     document.addEventListener('DOMContentLoaded', function() {
       const cards = document.querySelectorAll('.card');
