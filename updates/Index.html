@@ -34,9 +34,9 @@
       white-space: nowrap;
       animation: slide 25s linear infinite;
     }
-      
+    
     @keyframes slide {
-      10000% { transform: translateX(100%); }
+      0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
     
@@ -172,10 +172,10 @@
       </div>
 
       <!-- Slide 2 - Nested Swiper -->
-      <div class="swiper-slide h-[500px] p-3">
-  <div class="bg-white shadow-md rounded-lg flex flex-col justify-between h-full p-4 text-center">
-    <div class="swiper nestedSwiper2 rounded-full w-48 h-48 overflow-hidden">
-      <div class="swiper-wrapper">
+      <div class="swiper-slide p-3">
+        <div class="rounded-lg overflow-hidden shadow-md bg-white flex flex-col items-center">
+          <div class="swiper nestedSwiper1 rounded-full w-48 h-42 overflow-hidden">
+            <div class="swiper-wrapper">
 
               <!-- Kalai -->
               <div class="swiper-slide text-center" data-name="Kalai" data-description="Spot Award(Principal Engineer-SRE)">
@@ -206,8 +206,8 @@
         </div>
       </div>
 
-      <div class="swiper-slide h-[500px] p-3">
-  <div class="bg-white shadow-md rounded-lg flex flex-col justify-between h-full p-4 text-center">
+      <div class="swiper-slide p-3">
+  <div class="rounded-lg overflow-hidden shadow-md bg-white flex flex-col items-center">
     <div class="swiper nestedSwiper2 rounded-full w-48 h-48 overflow-hidden">
       <div class="swiper-wrapper">
         <!-- Kalaiselvan -->
@@ -266,6 +266,7 @@
       <h3 id="profile-name-2" class="text-lg font-semibold text-blue-600">Kalaiselvan</h3>
       <p id="profile-description-2" class="text-sm text-gray-600">Product Development</p>
     </div>
+
     <div class="p-2 text-center">
       <h3 class="text-lg font-semibold text-blue-600">Meet the Leads</h3>
       <p class="text-sm text-gray-600">Recognizing key contributors driving innovation and growth.</p>
@@ -344,8 +345,7 @@
     updateProfileDetails(nestedSwiper1, "1");
     updateProfileDetails(nestedSwiper2, "2");
   });
-</script>
-
+</script>  
 
   <div class="max-w-6xl mx-auto px-4 py-6">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
